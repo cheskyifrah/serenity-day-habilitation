@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+node_modules/
+
+# Development screenshots (not needed for production)
+screenshot-*.png
+full-page-*.png
+montage-check*.png
+hero-check.png
+index-backup-*.html
+CLAUDE.md
