@@ -36,6 +36,14 @@
     }
   </script>
 
+  <!-- Mobile device detection (runs before paint to avoid flash) -->
+  <script>
+    (function() {
+      var isMobile = (navigator.maxTouchPoints > 0 && window.innerWidth <= 1024);
+      if (isMobile) document.documentElement.classList.add('is-mobile-device');
+    })();
+  </script>
+
   <style>
     body {
       font-family: "Inter", "Arial", "Helvetica", sans-serif;
@@ -106,85 +114,83 @@
     .hero-br-mobile { display: none; }
     .hero-br-desktop { display: inline; }
 
-    /* Mobile-device-only styles (phones/tablets — not desktop browser resize) */
-    @media (hover: none) and (pointer: coarse) {
-      .hero-br-mobile { display: inline !important; }
-      .hero-br-desktop { display: none !important; }
-      /* Header: center logo, position hamburger */
-      .nav-container {
-        justify-content: center !important;
-      }
-      .nav-logo {
-        height: 4rem !important;
-      }
-      .nav-hamburger {
-        position: absolute !important;
-        right: 1rem !important;
-      }
+    /* Mobile-device-only styles (phones/tablets — JS-detected via .is-mobile-device on <html>) */
+    .is-mobile-device .hero-br-mobile { display: inline !important; }
+    .is-mobile-device .hero-br-desktop { display: none !important; }
+    /* Header: center logo, position hamburger */
+    .is-mobile-device .nav-container {
+      justify-content: center !important;
+    }
+    .is-mobile-device .nav-logo {
+      height: 4rem !important;
+    }
+    .is-mobile-device .nav-hamburger {
+      position: absolute !important;
+      right: 1rem !important;
+    }
 
-      /* Hero: white background like desktop, SVG bubbles visible, no photo behind text */
-      .hero-bg-mobile {
-        display: none !important;
-      }
-      /* Keep hero-decorative visible (SVG bubbles) — no override needed */
+    /* Hero: white background like desktop, SVG bubbles visible, no photo behind text */
+    .is-mobile-device .hero-bg-mobile {
+      display: none !important;
+    }
+    /* Keep hero-decorative visible (SVG bubbles) — no override needed */
 
-      /* Reduce hero bottom padding so collage sits closer to CTA */
-      .hero-section {
-        padding-bottom: 1rem !important;
-      }
+    /* Reduce hero bottom padding so collage sits closer to CTA */
+    .is-mobile-device .hero-section {
+      padding-bottom: 1rem !important;
+    }
 
-      /* Mobile collage: show between hero and amenities */
-      .mobile-collage {
-        display: block !important;
-      }
+    /* Mobile collage: show between hero and amenities */
+    .is-mobile-device .mobile-collage {
+      display: block !important;
+    }
 
-      /* Hide the desktop collage on real mobile — mobile-collage is used instead */
-      .hero-collage-desktop {
-        display: none !important;
-      }
+    /* Hide the desktop collage on real mobile — mobile-collage is used instead */
+    .is-mobile-device .hero-collage-desktop {
+      display: none !important;
+    }
 
-      /* Hero label: small, one line */
-      .hero-label {
-        font-size: 0.625rem !important; /* 10px */
-        letter-spacing: 0.12em !important;
-        margin-bottom: 0.75rem !important;
-      }
+    /* Hero label: small, one line */
+    .is-mobile-device .hero-label {
+      font-size: 0.625rem !important; /* 10px */
+      letter-spacing: 0.12em !important;
+      margin-bottom: 0.75rem !important;
+    }
 
-      /* Hero heading: large and bold */
-      .hero-heading {
-        font-size: 1.75rem !important; /* 28px — fits "Where Every Day Builds" on one line */
-        font-weight: 700 !important;
-        line-height: 1.15 !important;
-      }
+    /* Hero heading: large and bold */
+    .is-mobile-device .hero-heading {
+      font-size: 1.75rem !important; /* 28px — fits "Where Every Day Builds" on one line */
+      font-weight: 700 !important;
+      line-height: 1.15 !important;
+    }
 
-      /* "Independence": even larger, fills the line width to match heading above */
-      .hero-independence {
-        font-size: 3rem !important; /* 48px — visually matches width of line above */
-        font-weight: 900 !important;
-        display: block !important;
-        line-height: 1.0 !important;
-      }
+    /* "Independence": even larger, fills the line width to match heading above */
+    .is-mobile-device .hero-independence {
+      font-size: 3rem !important; /* 48px — visually matches width of line above */
+      font-weight: 900 !important;
+      display: block !important;
+      line-height: 1.0 !important;
+    }
 
-      /* Amenities: minimal strip */
-      .amenities-section {
-        padding-top: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
-      }
-      .amenities-label {
-        display: none !important;
-      }
-      .amenity-snacks {
-        display: none !important;
-      }
-      .amenities-list {
-        gap: 0.375rem !important; /* 6px */
-        font-size: 0.5625rem !important; /* 9px */
-        line-height: 1.2 !important;
-      }
-      .amenity-icon {
-        width: 0.625rem !important; /* 10px */
-        height: 0.625rem !important;
-      }
+    /* Amenities: minimal strip */
+    .is-mobile-device .amenities-section {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+    }
+    .is-mobile-device .amenities-label {
+      display: none !important;
+    }
+    .is-mobile-device .amenity-snacks {
+      display: none !important;
+    }
+    .is-mobile-device .amenities-list {
+      gap: 0.375rem !important; /* 6px */
+      font-size: 0.5625rem !important; /* 9px */
+      line-height: 1.2 !important;
+    }
+    .is-mobile-device .amenity-icon {
+      width: 0.625rem !important; /* 10px */
+      height: 0.625rem !important;
     }
   </style>
 </head>

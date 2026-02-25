@@ -36,6 +36,14 @@
     }
   </script>
 
+  <!-- Mobile device detection (runs before paint to avoid flash) -->
+  <script>
+    (function() {
+      var isMobile = (navigator.maxTouchPoints > 0 && window.innerWidth <= 1024);
+      if (isMobile) document.documentElement.classList.add('is-mobile-device');
+    })();
+  </script>
+
   <style>
     body {
       font-family: "Inter", "Arial", "Helvetica", sans-serif;
@@ -46,12 +54,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Mobile-device-only styles */
-    @media (hover: none) and (pointer: coarse) {
-      .nav-container { justify-content: center !important; }
-      .nav-logo { height: 4rem !important; }
-      .nav-hamburger { position: absolute !important; right: 1rem !important; }
-    }
+    /* Mobile-device-only styles (JS-detected via .is-mobile-device on <html>) */
+    .is-mobile-device .nav-container { justify-content: center !important; }
+    .is-mobile-device .nav-logo { height: 4rem !important; }
+    .is-mobile-device .nav-hamburger { position: absolute !important; right: 1rem !important; }
   </style>
 </head>
 <body class="bg-white">
