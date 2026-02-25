@@ -138,6 +138,11 @@
         display: block !important;
       }
 
+      /* Hide the desktop collage on real mobile — mobile-collage is used instead */
+      .hero-collage-desktop {
+        display: none !important;
+      }
+
       /* Hero label: small, one line */
       .hero-label {
         font-size: 0.625rem !important; /* 10px */
@@ -272,7 +277,7 @@
       <!-- Text -->
       <div class="py-4 text-center lg:text-left">
         <p class="hero-animate hero-animate-1 hero-label text-brand-blue-bright font-semibold text-sm uppercase tracking-[0.2em] mb-5">Adult Day Habilitation in New Jersey</p>
-        <h1 class="hero-animate hero-animate-2 hero-heading font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] font-normal text-brand-blue-dark leading-[1.12] tracking-[-0.01em] mb-6">
+        <h1 class="hero-animate hero-animate-2 hero-heading font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.75rem] font-normal text-brand-blue-dark leading-[1.12] tracking-[-0.01em] mb-6">
           Where Every Day<br class="hero-br-desktop"> Builds<br class="hero-br-mobile"> <span class="hero-independence text-brand-blue-bright">Independence</span>
         </h1>
         <p class="hero-animate hero-animate-3 text-brand-body text-base mb-8 max-w-lg mx-auto lg:mx-0 tracking-[0.01em]">
@@ -291,10 +296,10 @@
       </div>
 
       <!-- Image collage -->
-      <div class="hero-animate hero-animate-5 hidden lg:block relative lg:h-[560px]">
+      <div class="hero-collage-desktop hero-animate hero-animate-5 relative w-full h-[280px] sm:h-[340px] lg:h-[560px] mx-auto max-w-md sm:max-w-lg lg:max-w-none">
         <!-- Large main image -->
         <div class="absolute top-0 right-0 w-[75%] sm:w-[80%] h-[68%] sm:h-[72%] rounded-2xl overflow-hidden shadow-xl">
-          <img src="Hero image.png" alt="Caring staff at Serenity Day Habilitation" class="w-full h-full object-cover" loading="eager">
+          <img src="Hero image.png" alt="Caring staff at Serenity Day Habilitation" class="w-full h-full object-cover object-[center_8%] lg:object-center" loading="eager">
         </div>
         <!-- Smaller overlapping image -->
         <div class="absolute bottom-0 left-0 w-[52%] sm:w-[58%] h-[48%] sm:h-[52%] rounded-2xl overflow-hidden shadow-xl border-4 border-white">
