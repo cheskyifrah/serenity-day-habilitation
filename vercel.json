@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/adult-day-habilitation-services-about-us",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/adult-day-habilitation-services-contact-us",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/adult-day-habilitation-services",
+      "destination": "/programs.html",
+      "permanent": true
+    },
+    {
+      "source": "/adult-day-habilitation-services-activities",
+      "destination": "/programs.html",
+      "permanent": true
+    }
+  ]
+}
